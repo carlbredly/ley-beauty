@@ -12,6 +12,20 @@ export const metadata: Metadata = {
     description: "Handcrafted braids. Natural care. A sanctuary in Okinawa.",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "LEY Beauty — Luxury Braiding Salon in Okinawa",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LEY Beauty — Luxury Braiding Salon in Okinawa",
+    description: "Handcrafted braids. Natural care. A sanctuary in Okinawa.",
+    images: ["/og.jpg"],
   },
 };
 
