@@ -2,11 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "LEY Beauty — Luxury Braiding Salon in Okinawa";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-
-export default async function TwitterImage() {
+export async function GET() {
   const playfair = await fetch(
     new URL(
       "https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtY.ttf"
@@ -34,7 +30,6 @@ export default async function TwitterImage() {
           overflow: "hidden",
         }}
       >
-        {/* Subtle gold radial glow */}
         <div
           style={{
             position: "absolute",
@@ -62,7 +57,6 @@ export default async function TwitterImage() {
           }}
         />
 
-        {/* Top bar: location badge */}
         <div
           style={{
             display: "flex",
@@ -93,7 +87,6 @@ export default async function TwitterImage() {
           </span>
         </div>
 
-        {/* Main title */}
         <div
           style={{
             display: "flex",
@@ -127,7 +120,6 @@ export default async function TwitterImage() {
           </span>
         </div>
 
-        {/* Gold divider */}
         <div
           style={{
             width: "80px",
@@ -139,7 +131,6 @@ export default async function TwitterImage() {
           }}
         />
 
-        {/* Tagline */}
         <span
           style={{
             fontFamily: '"DM Sans"',
@@ -153,7 +144,6 @@ export default async function TwitterImage() {
           Okinawa.
         </span>
 
-        {/* Bottom: brand name */}
         <div
           style={{
             position: "absolute",
@@ -187,7 +177,6 @@ export default async function TwitterImage() {
           </span>
         </div>
 
-        {/* Border accent */}
         <div
           style={{
             position: "absolute",
@@ -202,7 +191,8 @@ export default async function TwitterImage() {
       </div>
     ),
     {
-      ...size,
+      width: 1200,
+      height: 630,
       fonts: [
         {
           name: "Playfair Display",
