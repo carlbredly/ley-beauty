@@ -8,14 +8,16 @@ Built with Next.js 14 (App Router), Supabase, Tailwind CSS, and Resend.
 
 ## Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 14 (App Router, TypeScript) |
-| Database | Supabase (PostgreSQL + Row Level Security) |
-| Auth | Supabase (service role for admin APIs) |
-| Emails | Resend |
-| Styling | Tailwind CSS (custom design tokens) |
-| Deployment | Vercel |
+
+| Layer      | Technology                                 |
+| ---------- | ------------------------------------------ |
+| Framework  | Next.js 14 (App Router, TypeScript)        |
+| Database   | Supabase (PostgreSQL + Row Level Security) |
+| Auth       | Supabase (service role for admin APIs)     |
+| Emails     | Resend                                     |
+| Styling    | Tailwind CSS (custom design tokens)        |
+| Deployment | Vercel                                     |
+
 
 ---
 
@@ -160,11 +162,13 @@ vercel --prod
 
 ## Pages
 
-| URL | Description |
-|---|---|
-| `/` | Home page — hero, services, why us, gallery, testimonials |
-| `/booking` | Booking flow — calendar → slots → form |
-| `/admin/dashboard` | Password-protected admin panel |
+
+| URL                | Description                                               |
+| ------------------ | --------------------------------------------------------- |
+| `/`                | Home page — hero, services, why us, gallery, testimonials |
+| `/booking`         | Booking flow — calendar → slots → form                    |
+| `/admin/dashboard` | Password-protected admin panel                            |
+
 
 ---
 
@@ -181,11 +185,13 @@ vercel --prod
 ## Email Flows
 
 ### Admin Notification (on new booking)
+
 - Subject: `✨ New Appointment Request – [Client Name]`
 - Sent to: `ADMIN_EMAIL`
 - Contains: client details + link to dashboard
 
 ### Client Confirmation (on admin accept)
+
 - Subject: `Your appointment at LEY Beauty is confirmed!`
 - Sent to: client's email
 - Contains: appointment details, price, bank transfer instructions, 48h payment deadline
@@ -194,14 +200,16 @@ vercel --prod
 
 ## Services & Pricing
 
-| Service | Duration | Price |
-|---|---|---|
-| Box Braids | 3h | ¥12,000 |
-| Knotless Braids | 4h | ¥15,000 |
-| Cornrows | 1h30 | ¥7,000 |
-| Senegalese Twists | 3h30 | ¥13,500 |
-| Fulani Braids | 2h | ¥9,500 |
-| Goddess Braids | 2h30 | ¥11,000 |
+
+| Service           | Duration | Price   |
+| ----------------- | -------- | ------- |
+| Box Braids        | 3h       | ¥12,000 |
+| Knotless Braids   | 4h       | ¥15,000 |
+| Cornrows          | 1h30     | ¥7,000  |
+| Senegalese Twists | 3h30     | ¥13,500 |
+| Fulani Braids     | 2h       | ¥9,500  |
+| Goddess Braids    | 2h30     | ¥11,000 |
+
 
 To update prices/services, edit `types/index.ts` → `SERVICES` array.
 
@@ -220,18 +228,20 @@ All server-side API routes use the **service role key** (bypasses RLS) — never
 
 ## Brand Design System
 
-| Token | Value |
-|---|---|
-| `obsidian` | `#080B0F` — background |
-| `gold` | `#C8952A` — primary accent |
-| `sand` | `#EDE5D0` — body text |
-| `coral` | `#C4593A` — secondary accent |
-| `sage` | `#6B8F71` — available state |
-| Font (headings) | Cormorant Garamond |
-| Font (body) | DM Sans |
+
+| Token           | Value                        |
+| --------------- | ---------------------------- |
+| `obsidian`      | `#080B0F` — background       |
+| `gold`          | `#C8952A` — primary accent   |
+| `sand`          | `#EDE5D0` — body text        |
+| `coral`         | `#C4593A` — secondary accent |
+| `sage`          | `#6B8F71` — available state  |
+| Font (headings) | Cormorant Garamond           |
+| Font (body)     | DM Sans                      |
+
 
 ---
 
 ## License
 
-© 2025 LEY Beauty. All rights reserved.
+© 2025 LEY-Beauty. All rights reserved.

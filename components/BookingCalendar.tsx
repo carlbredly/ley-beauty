@@ -139,8 +139,8 @@ export default function BookingCalendar({
               aria-pressed={selected}
             >
               {day}
-              {available && !selected && !past && (
-                <span className="absolute bottom-[3px] left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gold/50" />
+              {available && !selected && (
+                <span className="absolute bottom-[2px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gold" />
               )}
             </button>
           );
@@ -150,7 +150,7 @@ export default function BookingCalendar({
       {/* Legend */}
       <div className="flex items-center gap-5 mt-5 pt-4 border-t border-border">
         <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold/50" />
+          <span className="w-2 h-2 rounded-full bg-gold" />
           <span className="text-[11px] text-muted">Available</span>
         </div>
         <div className="flex items-center gap-1.5">
