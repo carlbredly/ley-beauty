@@ -23,12 +23,12 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 w-full">
       <nav
-        className={`max-w-6xl mx-auto flex items-center justify-between h-16 px-6 md:px-8 rounded-2xl transition-all duration-700 ${
+        className={`w-full mx-auto flex items-center justify-between h-16 px-6 md:px-8 rounded-2xl transition-all duration-700 ${
           scrolled
             ? "bg-obsidian/80 backdrop-blur-xl border border-border-light shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-            : "bg-transparent"
+            : "bg-transparent w-full"
         }`}
       >
         {/* Logo */}
