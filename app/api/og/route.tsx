@@ -3,17 +3,19 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export async function GET() {
-  const playfair = await fetch(
+  const playfairData = fetch(
     new URL(
       "https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtY.ttf"
     )
   ).then((res) => res.arrayBuffer());
 
-  const dmSans = await fetch(
+  const dmSansData = fetch(
     new URL(
       "https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHQ.ttf"
     )
   ).then((res) => res.arrayBuffer());
+
+  const [playfair, dmSans] = await Promise.all([playfairData, dmSansData]);
 
   return new ImageResponse(
     (
@@ -27,48 +29,34 @@ export async function GET() {
           padding: "60px 80px",
           backgroundColor: "#080B0F",
           position: "relative",
-          overflow: "hidden",
         }}
       >
+        {/* Gold gradient top bar */}
         <div
           style={{
             position: "absolute",
-            top: "-120px",
-            right: "-80px",
-            width: "600px",
-            height: "600px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(200,149,42,0.12) 0%, transparent 70%)",
-            display: "flex",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-100px",
-            left: "-60px",
-            width: "400px",
-            height: "400px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(196,89,58,0.08) 0%, transparent 70%)",
+            top: "0",
+            left: "0",
+            right: "0",
+            height: "4px",
+            background: "linear-gradient(90deg, #C8952A, #E0A830, #C4593A)",
             display: "flex",
           }}
         />
 
+        {/* Location badge */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "8px",
-            marginBottom: "32px",
+            gap: "10px",
+            marginBottom: "36px",
           }}
         >
           <div
             style={{
-              width: "8px",
-              height: "8px",
+              width: "10px",
+              height: "10px",
               borderRadius: "50%",
               backgroundColor: "#C8952A",
               display: "flex",
@@ -76,74 +64,80 @@ export async function GET() {
           />
           <span
             style={{
-              fontFamily: '"DM Sans"',
+              fontFamily: "DM Sans",
               fontSize: "18px",
               color: "#C8952A",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
+              letterSpacing: "3px",
             }}
           >
-            Okinawa, Japan
+            OKINAWA, JAPAN
           </span>
         </div>
 
+        {/* Title */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "4px",
-            marginBottom: "24px",
+            marginBottom: "28px",
           }}
         >
           <span
             style={{
-              fontFamily: '"Playfair Display"',
-              fontSize: "72px",
+              fontFamily: "Playfair Display",
+              fontSize: "74px",
               fontWeight: 700,
               color: "#EDE5D0",
-              lineHeight: 1.1,
+              lineHeight: "1.1",
             }}
           >
             The Art of
           </span>
           <span
             style={{
-              fontFamily: '"Playfair Display"',
-              fontSize: "72px",
+              fontFamily: "Playfair Display",
+              fontSize: "74px",
               fontWeight: 700,
-              fontStyle: "italic",
               color: "#C8952A",
-              lineHeight: 1.1,
+              lineHeight: "1.1",
+              fontStyle: "italic",
             }}
           >
             Braiding
           </span>
         </div>
 
+        {/* Gold line */}
         <div
           style={{
             width: "80px",
             height: "3px",
             backgroundColor: "#C8952A",
-            marginBottom: "24px",
-            borderRadius: "2px",
+            marginBottom: "28px",
             display: "flex",
           }}
         />
 
-        <span
+        {/* Tagline */}
+        <div
           style={{
-            fontFamily: '"DM Sans"',
-            fontSize: "22px",
-            color: "#8899AA",
-            maxWidth: "500px",
-            lineHeight: 1.5,
+            display: "flex",
+            maxWidth: "520px",
           }}
         >
-          Handcrafted braids. Natural care. A sanctuary for your beauty in
-          Okinawa.
-        </span>
+          <span
+            style={{
+              fontFamily: "DM Sans",
+              fontSize: "24px",
+              color: "#8899AA",
+              lineHeight: "1.5",
+            }}
+          >
+            Handcrafted braids. Natural care. A sanctuary for your beauty in Okinawa.
+          </span>
+        </div>
 
+        {/* Bottom bar */}
         <div
           style={{
             position: "absolute",
@@ -157,37 +151,25 @@ export async function GET() {
         >
           <span
             style={{
-              fontFamily: '"Playfair Display"',
+              fontFamily: "Playfair Display",
               fontSize: "28px",
-              fontWeight: 600,
+              fontWeight: 700,
               color: "#EDE5D0",
-              letterSpacing: "4px",
+              letterSpacing: "6px",
             }}
           >
             LEY BEAUTY
           </span>
           <span
             style={{
-              fontFamily: '"DM Sans"',
+              fontFamily: "DM Sans",
               fontSize: "16px",
-              color: "#3D4450",
+              color: "#4A5568",
             }}
           >
             leybeauty.vercel.app
           </span>
         </div>
-
-        <div
-          style={{
-            position: "absolute",
-            top: "0",
-            left: "0",
-            right: "0",
-            height: "4px",
-            background: "linear-gradient(90deg, #C8952A, #E0A830, #C4593A)",
-            display: "flex",
-          }}
-        />
       </div>
     ),
     {

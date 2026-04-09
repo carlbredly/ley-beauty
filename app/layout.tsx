@@ -3,6 +3,9 @@ import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_URL || "https://leybeauty.vercel.app"
+  ),
   title: "LEY Beauty — Luxury Braiding Salon in Okinawa",
   description:
     "Handcrafted braids, natural care, and a sanctuary of beauty in Okinawa, Japan. Book your appointment at LEY Beauty.",
