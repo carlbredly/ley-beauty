@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_URL || "https://leybeauty.vercel.app"
+    process.env.NEXT_PUBLIC_URL || "https://ley-beauty.vercel.app"
   ),
   title: "LEY Beauty — Luxury Braiding Salon in Okinawa",
   description:
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/api/og",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "LEY Beauty — Luxury Braiding Salon in Okinawa",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LEY Beauty — Luxury Braiding Salon in Okinawa",
     description: "Handcrafted braids. Natural care. A sanctuary in Okinawa.",
-    images: ["/api/og"],
+    images: ["/og.jpg"],
   },
 };
 

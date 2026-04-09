@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://leybeauty.vercel.app/sitemap.xml",
+    sitemap: "https://ley-beauty.vercel.app/sitemap.xml",
   };
 }
